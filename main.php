@@ -1,10 +1,10 @@
 <?php
 require_once("fizzbuzz.php");
 
-$fizzbuzz = new FizzBuzz();
+$fizzbuzz = new FizzBuzz(0);
 
 foreach (range(1,100) as $number) {
-    echo $fizzbuzz->calculate($number) . "\n";
+    echo $fizzbuzz->fizzbuzz($number) . "\n";
 }
 
 ?>
