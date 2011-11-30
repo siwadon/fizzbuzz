@@ -36,6 +36,14 @@ class FizzBuzzTest extends PHPUnit_Framework_TestCase {
         $expect = 11;
         $this->assertEquals($result, $expect);
     }
+    
+    /**
+     * @expectedException InvalidArgumentException
+     *
+     */
+    public function testException() {
+        $this->fizzbuzz->fizzbuzz('abc');
+    }
 }
 
 ?>
