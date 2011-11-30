@@ -4,17 +4,21 @@
 *
 * @author Dew Saosoong <dew@abctech-thailand.com>
 */
+
+define('Fizz', 3);
+define('Buzz', 5);
+
 class FizzBuzz {
 
-    function is_it($word, $number) {
-        if ($word == 'Fizz') {
-            $divisor = 3;
-        }
-        else if ($word == 'Buzz') {
-            $divisor = 5;
-        }
-        
+    function get_remainder($word, $number) {
+        $divisor   = constant($word);
         $remainder = $number % $divisor;
+        
+        return $remainder;
+    }
+    
+    function is_it($word, $number) {        
+        $remainder = self::get_remainder($word, $number);
     
         if ($remainder == 0) {
             $result = TRUE;
