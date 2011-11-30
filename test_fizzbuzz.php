@@ -14,6 +14,26 @@ class FizzBuzzTest extends PHPUnit_Framework_TestCase {
     public function tearDown() {
         unset($this->fizzbuzz);
     }
+    
+    public function testIsIt() {
+        $result = $this->fizzbuzz->is_it('Fizz', 3);
+        $this->assertTrue($result);
+        
+        $result = $this->fizzbuzz->is_it('Buzz', 5);
+        $this->assertTrue($result);
+        
+        $result = $this->fizzbuzz->is_it('Fizz', 15);
+        $this->assertTrue($result);
+        
+        $result = $this->fizzbuzz->is_it('Buzz', 15);
+        $this->assertTrue($result);
+        
+        $result = $this->fizzbuzz->is_it('Fizz', 1);
+        $this->assertFalse($result);
+        
+        $result = $this->fizzbuzz->is_it('Buzz', 1);
+        $this->assertFalse($result);
+    }
 
     public function testFizzBuzz() {
         $result = $this->fizzbuzz->fizzbuzz(3);
