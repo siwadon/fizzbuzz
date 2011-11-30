@@ -7,6 +7,11 @@
 class FizzBuzz {
         
     function fizzbuzz($number) {
+            
+        if (!is_numeric($number) || !is_int($number)) {
+            throw new InvalidArgumentException("It isn't an integer number");
+        }
+        
         $is_fizz     = ($number % 3) == 0 ? TRUE : FALSE;
         $is_buzz     = ($number % 5) == 0 ? TRUE : FALSE;
         $is_fizzbuzz = $is_fizz && $is_buzz;
