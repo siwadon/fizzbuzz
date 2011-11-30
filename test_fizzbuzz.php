@@ -15,6 +15,32 @@ class FizzBuzzTest extends PHPUnit_Framework_TestCase {
         unset($this->fizzbuzz);
     }
     
+    public function testGetRemainder() {
+        $result = $this->fizzbuzz->get_remainder('Fizz', 3);
+        $expect = 0;
+        $this->assertEquals($result, $expect);
+        
+        $result = $this->fizzbuzz->get_remainder('Buzz', 5);
+        $expect = 0;
+        $this->assertEquals($result, $expect);
+        
+        $result = $this->fizzbuzz->get_remainder('Fizz', 15);
+        $expect = 0;
+        $this->assertEquals($result, $expect);        
+        
+        $result = $this->fizzbuzz->get_remainder('Buzz', 15);
+        $expect = 0;
+        $this->assertEquals($result, $expect);
+        
+        $result = $this->fizzbuzz->get_remainder('Fizz', 1);
+        $expect = 1;
+        $this->assertEquals($result, $expect);
+        
+        $result = $this->fizzbuzz->get_remainder('Buzz', 1);
+        $expect = 1;
+        $this->assertEquals($result, $expect);
+    }
+    
     public function testIsIt() {
         $result = $this->fizzbuzz->is_it('Fizz', 3);
         $this->assertTrue($result);
